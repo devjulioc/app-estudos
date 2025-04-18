@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>App de Estudos</title>
+  </head>
+  <body>
+    <div class="container">
+        <form id="diasForm">
+            <h1>Escolha os dias em que você quer estudar</h1>
+            <label>
+                <input type="checkbox" name="dias" value="Segunda">
+                Segunda-feira
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Terça">
+                Terça-feira
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Quarta">
+                Quarta-feira
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Quinta">
+                Quinta-feira
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Sexta">
+                Sexta-feira
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Sabado">
+                Sábado
+            </label>
+            <label>
+                <input type="checkbox" name="dias" value="Domingo">
+                Domingo
+            </label>
+
+            <button type="button" onclick="avancarParaHorario()">Avançar</button>
+        </form>
+    </div>
+    <div id="horarioContainer" class="container" style="display: none;">
+        <h2>Qual horário você pode estudar?</h2>
+        <label for="inicio">Início</label>
+        <input type="time" id="inicio"><br><br>
+
+        <label for="fim">Fim</label>
+        <input type="time" id="fim"><br><br>
+
+        <button type="button" onclick="avancarParaTemas()">Avançar</button>
+    </div>
+    <div id="temasContainer" class="container" style="display: none;">
+        <h2>O que você quer estudar?</h2>
+
+        <input type="text" id="novoTema" placeholder="Ex: Programação"><br><br>
+        <button type="button" onclick="adicionarTema()">Adicionar</button>
+
+        <h3>Temas adicionados</h3>
+        <ul id="listaTemas"></ul>
+
+        <br>
+        <button type="button" onclick="finalizarConfiguracao()">Avançar</button>
+    </div>
+    <div id="resumoContainer" class="container" style="display: none;">
+        <h2>Resumo do Cronograma</h2>
+        
+        <p><strong>Dias da semana:</strong><span id="resumoDias"></span></p>
+
+        <p><strong>Horário:</strong><span id="resumoHorario"></span></p>
+
+        <p><strong>Temas:</strong></p>
+        <ul id="resumoTemas" style="margin-top: 20px;">Agora é só começar!</ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
